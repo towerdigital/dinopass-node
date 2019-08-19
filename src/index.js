@@ -10,7 +10,7 @@ import { fetchPassword } from 'api/fetch-password'
 
 /**
  * @description Capitalize the first letter and amend a hash on the end.
- * The oraclefied passwords for Craig T.
+ * The oraclefied password for Craig T. Example: Sadsnail48#
  * @param p The password to Oracleify
  */
 const oracleify = p => {
@@ -76,7 +76,7 @@ async function getStrongPassword(n) {
  * @returns {Promise<* | void>}
  */
 async function getOraclifiedPassword(n) {
-  return requestPasswords(n, 'strong', true)
+  return requestPasswords(n, 'simple', true)
     .then(passwords => passwords)
     .catch(error => console.log(error))
 }

@@ -14,5 +14,6 @@ module.exports = {
     '**/?(*.)+(spec|test).[tj]s?(x)'
   ],
   testPathIgnorePatterns: ['/node_modules/'],
-  verbose: true
+  verbose: true,
+  setupFilesAfterEnv: ['jest-extended', 'jest-chain']
 }
