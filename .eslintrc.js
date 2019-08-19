@@ -16,6 +16,13 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 2,
-    'space-before-function-paren': ['error', 'never']
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always'
+      }
+    ]
   }
 }
