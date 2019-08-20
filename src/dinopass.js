@@ -27,6 +27,10 @@ const oracleify = p => {
 async function requestPasswords(num, type, isOraclify) {
   const requests = []
 
+  if (num === undefined) {
+    num = 1
+  }
+
   if (num > 10) {
     num = 10
   }
