@@ -15,7 +15,7 @@ module.exports = function(wallaby) {
     testFramework: 'jest',
 
     setup: function(wallaby) {
-      const jestConfig = require('./package.json').jest
+      const jestConfig = require('./jest.config').jest
       /* for example:
        * jestConfig.globals = { "__DEV__": true }; */
       wallaby.testFramework.configure(jestConfig)
