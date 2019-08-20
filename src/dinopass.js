@@ -10,7 +10,7 @@ import { fetchPassword } from 'api/fetch-password'
 
 /**
  * @description Capitalize the first letter and amend a hash on the end.
- * The oraclefied password for Craig T. Example: Sadsnail48#
+ * The oraclefied password for Craig T.
  * @param p The password to Oracleify
  */
 const oracleify = p => {
@@ -26,10 +26,6 @@ const oracleify = p => {
  */
 async function requestPasswords(num, type, isOraclify) {
   const requests = []
-
-  if (type === undefined) {
-    type = 'simple'
-  }
 
   if (num > 10) {
     num = 10
@@ -51,34 +47,34 @@ async function requestPasswords(num, type, isOraclify) {
 }
 
 /**
- *
+ * @description Returns one or more simple passwords
  * @param n Number of passwords.
- * @returns {Promise[]}
+ * @returns Array
  */
 async function getSimplePassword(n) {
   return requestPasswords(n, 'simple')
     .then(passwords => passwords)
-    .catch(error => console.log(error))
+    .catch(error => error)
 }
 
 /**
- *
- * @returns {Promise<* | void>}
+ * @description Returns one or more strong passwords
+ * @returns Array
  */
 async function getStrongPassword(n) {
   return requestPasswords(n, 'strong')
     .then(passwords => passwords)
-    .catch(error => console.log(error))
+    .catch(error => error)
 }
 
 /**
- *
- * @returns {Promise<* | void>}
+ * @description Returns one or more oraclified passwords
+ * @returns Array
  */
 async function getOraclifiedPassword(n) {
   return requestPasswords(n, 'simple', true)
     .then(passwords => passwords)
-    .catch(error => console.log(error))
+    .catch(error => error)
 }
 
 export { getSimplePassword, getStrongPassword, getOraclifiedPassword }
