@@ -23,6 +23,17 @@ describe('DinoPass Client Test Suite', () => {
       .toContain('crazypromise32')
   })
 
+  it('Should return one password if no number is specified.', async () => {
+    const resp = { data: 'bigalert23' }
+    mockAxios.get.mockResolvedValue(resp)
+
+    const pwd = await dinopass.getSimplePassword()
+    expect(pwd)
+      .toBeArray()
+      .toBeArrayOfSize(1)
+      .toContain('bigalert23')
+  })
+
   it('Should handle an error', async () => {
     const resp = 'error'
     mockAxios.get.mockRejectedValue(resp)
