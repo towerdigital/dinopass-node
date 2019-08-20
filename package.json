@@ -2,7 +2,7 @@
     "name": "dinopass-node",
     "version": "0.0.1",
     "description": "Simple DinoPass API client. Awesome password generator for kids and middle aged IT guys.",
-    "main": "index.js",
+    "main": "main.js",
     "scripts": {
         "lint": "eslint 'src/**/*.js' --color",
         "lint:fix": "prettier-eslint 'src/**/*.js' --write",
@@ -53,9 +53,9 @@
         "prettier": "^1.18.2",
         "prettier-eslint": "^9.0.0",
         "prettier-eslint-cli": "^5.0.0",
+        "rollup": "^1.19.4",
+        "rollup-plugin-terser": "^5.1.1",
         "standard": "^13.1.0"
     },
-    "dependencies": {
-        "@babel/polyfill": "^7.4.4"
-    }
+    "dependencies": {}
 }
