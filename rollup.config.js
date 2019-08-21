@@ -14,5 +14,6 @@ export default {
       ' *\n' +
       ' */'
   },
-  plugins: [cleanup()]
+  plugins: [cleanup()],
+  external: 'axios'
 }
