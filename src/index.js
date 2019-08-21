@@ -6,7 +6,7 @@
  *
  */
 
-import { fetchPassword } from 'api/fetch-password'
+import { fetchPassword } from './api'
 
 /**
  * @description Capitalize the first letter and amend a hash on the end.

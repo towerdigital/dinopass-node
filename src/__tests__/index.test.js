@@ -6,7 +6,7 @@
  *
  */
 
-import * as dinopass from '../dinopass'
+import * as dinopass from '../main'
 import mockAxios from 'axios'
 
 jest.mock('axios')
