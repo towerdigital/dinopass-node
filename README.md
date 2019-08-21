@@ -1,7 +1,7 @@
 # Simple dinopass.com API client
 
 A very simple promise based api client for [dinopass.com](https://dinopass.com).
-Awesome password generator for kids and middle aged IT guys.
+Awesome password generator for kids, and apparently middle aged IT guys.
 
 About Dino's Passwords
 What does 'Simple password' mean?
