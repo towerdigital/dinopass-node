@@ -26,9 +26,9 @@
     "author": "Phillip Henslee <ph2@ph2.us> (https://github.com/philliphenslee)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/towerdigital/dinopass-node.git/issues"
+        "url": "https://github.com/towerdigital/dinopass-node/issues"
     },
-    "homepage": "https://github.com/towerdigital/dinopass-node.git#readme",
+    "homepage": "https://github.com/towerdigital/dinopass-node#readme",
     "devDependencies": {
         "@babel/cli": "^7.5.5",
         "@babel/core": "^7.5.5",
