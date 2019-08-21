@@ -15,6 +15,12 @@ What does 'Strong password' mean?
 
 Strong passwords have mixed upper and lower case letters, a special character (like @, \$, ! and so on) plus some numbers. They are best to use for important things like email accounts.
 
+### Install
+
+```
+npm install dinopass-node
+```
+
 ### Example usage
 
 ```
