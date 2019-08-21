@@ -1,11 +1,33 @@
 # Simple dinopass.com API client
 
-## Usage
+A ver simple promise based api client for dinopass.com.
+
+### Examples
 
 ```
 dinopass = require('dinopass-node')
 
-const simplePassword = await dinopass.getSimplePassword(1);
+// Using async/await
 
-const strongPasswords = await dinopass.getStrongPassword(5);
+const asyncFunction = async () => {
+  simplePassword = await dinopass.getSimplePassword(1)
+  console.log(simplePassword)
+}
+
+asyncFunction()  output> [ 'newiron29' ]
+
+// Promise
+
+dinopass.getStrongPassword(5)
+.then(pwds => console.log(pwds))
+
+output>
+
+[
+  'poorB@ll45',
+  'richNew+10',
+  'paleOl!ve66',
+  'hug3Curve94',
+  'lu$hSun14'
+]
 ```
