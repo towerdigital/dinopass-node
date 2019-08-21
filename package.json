@@ -1,8 +1,8 @@
 {
     "name": "dinopass-node",
     "version": "0.0.1",
-    "description": "Simple DinoPass API client. Awesome password generator for kids and middle aged IT guys.",
-    "main": "main.js",
+    "description": "Simple DinoPass API client. Awesome password generator for kids, and apparently middle aged IT guys.",
+    "main": "dist/index.js",
     "scripts": {
         "lint": "eslint 'src/**/*.js' --color",
         "lint:fix": "prettier-eslint 'src/**/*.js' --write",
@@ -20,15 +20,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/philliphenslee/javascript-project-template.git"
+        "url": "git+https://github.com/towerdigital/dinopass-node.git"
     },
     "keywords": ["javascript", "template"],
     "author": "Phillip Henslee <ph2@ph2.us> (https://github.com/philliphenslee)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/philliphenslee/javascript-project-template/issues"
+        "url": "https://github.com/towerdigital/dinopass-node.git/issues"
     },
-    "homepage": "https://github.com/philliphenslee/javascript-project-template#readme",
+    "homepage": "https://github.com/towerdigital/dinopass-node.git#readme",
     "devDependencies": {
         "@babel/cli": "^7.5.5",
         "@babel/core": "^7.5.5",
@@ -52,7 +52,6 @@
         "rollup": "^1.19.4",
         "rollup-plugin-babel": "^4.3.3",
         "rollup-plugin-cleanup": "^3.1.1",
-        "rollup-plugin-node-resolve": "^5.2.0",
         "standard": "^13.1.0"
     },
     "dependencies": {
