@@ -6,7 +6,8 @@
     "scripts": {
         "lint": "eslint 'src/**/*.js' --color",
         "lint:fix": "prettier-eslint 'src/**/*.js' --write",
-        "test": "jest"
+        "test": "jest",
+        "build": "rollup --config"
     },
     "husky": {
         "hooks": {
