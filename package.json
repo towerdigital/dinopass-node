@@ -20,9 +20,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/towerdigital/dinopass-node.git"
+        "url": "https://github.com/towerdigital/dinopass-node.git"
     },
-    "keywords": ["javascript", "template"],
+    "keywords": ["dinopass", "passwords"],
     "author": "Phillip Henslee <ph2@ph2.us> (https://github.com/philliphenslee)",
     "license": "MIT",
     "bugs": {
