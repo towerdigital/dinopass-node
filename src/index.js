@@ -56,29 +56,37 @@ async function requestPasswords(num, type, isOraclify) {
  * @returns Array
  */
 async function getSimplePassword(n) {
-  return requestPasswords(n, 'simple')
-    .then(passwords => passwords)
-    .catch(error => error)
+  try {
+    return await requestPasswords(n, 'simple')
+  } catch (err) {
+    return err
+  }
 }
 
 /**
  * @description Returns one or more strong passwords
+ * @param n Number of passwords.
  * @returns Array
  */
 async function getStrongPassword(n) {
-  return requestPasswords(n, 'strong')
-    .then(passwords => passwords)
-    .catch(error => error)
+  try {
+    return await requestPasswords(n, 'strong')
+  } catch (err) {
+    return err
+  }
 }
 
 /**
  * @description Returns one or more oraclified passwords
+ * @param n Number of passwords.
  * @returns Array
  */
 async function getOraclifiedPassword(n) {
-  return requestPasswords(n, 'simple', true)
-    .then(passwords => passwords)
-    .catch(error => error)
+  try {
+    return await requestPasswords(n, true, 'simple')
+  } catch (err) {
+    return err
+  }
 }
 
 export { getSimplePassword, getStrongPassword, getOraclifiedPassword }
