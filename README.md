@@ -1,8 +1,17 @@
 # Simple dinopass.com API client
 
-A ver simple promise based api client for dinopass.com.
+A very simple promise based api client for [dinopass.com](https://dinopass.com).
+Awesome password generator for kids and middle aged IT guys.
 
-### Examples
+About Dino's Passwords
+What does 'Simple password' mean?
+
+Simple passwords only have lower case letters and numbers. They are easier to remember but might also be easier for someone else to guess.
+What does 'Strong password' mean?
+
+Strong passwords have mixed upper and lower case letters, a special character (like @, \$, ! and so on) plus some numbers. They are best to use for important things like email accounts.
+
+### Example usage
 
 ```
 dinopass = require('dinopass-node')
