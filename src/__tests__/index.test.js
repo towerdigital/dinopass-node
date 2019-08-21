@@ -1,12 +1,12 @@
 /**
- * Copyright (c) Tower Digital LLC. All Rights Reserved.
+ * Copyright (c) Tower Digital LLC and Phillip Henslee. All Rights Reserved.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
  */
 
-import * as dinopass from '../main'
+import * as dinopass from '../index'
 import mockAxios from 'axios'
 
 jest.mock('axios')
