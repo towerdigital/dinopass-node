@@ -1,9 +1,9 @@
 # dinopass-node
 
-[![dinopass](https://img.shields.io/badge/dino-pass-blue.svg)](https://github.com/philliphenslee/smartslack)
-[![Node Module](https://img.shields.io/badge/node.js-module-82bb22.svg)](https://github.com/philliphenslee/smartslack)
+[![dinopass](https://img.shields.io/badge/dino-pass-blue.svg)](https://github.com/towerdigital/dinopass-node)
+[![Node Module](https://img.shields.io/badge/node.js-module-82bb22.svg)](https://github.com/towerdigital/dinopass-node)
 [![npm version](https://badge.fury.io/js/dinopass-node.svg)](https://badge.fury.io/js/dinopass-node)
-[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/philliphenslee/smartslack/master/LICENSE)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/towerdigital/dinopass-node/blob/master/LICENSE)
 
 A very simple promise based node.JS api client for [dinopass.com](https://dinopass.com).
 Awesome password generator for kids, and apparently middle aged IT guys.
