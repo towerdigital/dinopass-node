@@ -83,7 +83,7 @@ async function getStrongPassword(n) {
  */
 async function getOraclifiedPassword(n) {
   try {
-    return await requestPasswords(n, true, 'simple')
+    return await requestPasswords(n, 'simple', true)
   } catch (err) {
     return err
   }
