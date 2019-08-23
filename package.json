@@ -1,8 +1,8 @@
 {
     "name": "dinopass-node",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Simple DinoPass API client. Awesome password generator for kids, and apparently middle aged IT guys.",
-    "main": "./dist/index.js",
+    "main": "dist/index.js",
     "scripts": {
         "lint": "eslint 'src/**/*.js' --color",
         "lint:fix": "prettier-eslint 'src/**/*.js' --write",
