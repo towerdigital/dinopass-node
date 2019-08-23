@@ -22,7 +22,7 @@ async function fetchPassword(type) {
 const oracleify = p => {
   return p.charAt(0).toUpperCase() + p.slice(1) + '#'
 }
-async function requestPasswords(num, type, isOraclify) {
+async function requestPasswords(num, type = 'simple', isOraclify) {
   const requests = []
   if (num === undefined) {
     num = 1

@@ -65,7 +65,7 @@ describe('DinoPass Client Test Suite', () => {
     const resp = { data: 'greenkey44' }
     mockAxios.get.mockResolvedValue(resp)
 
-    const pwd = await dinopass.getOraclifiedPassword(3)
+    const pwd = await dinopass.getOraclifiedPassword(3) /* ? */
     expect(pwd)
       .toBeArray()
       .toBeArrayOfSize(3)
