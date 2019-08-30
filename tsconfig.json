@@ -9,7 +9,7 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "outDir": "./lib",
-        "sourceMap": false,
+        "inlineSourceMap": true,
         "lib": ["es5", "es2015", "es2016.array.include", "esnext.asynciterable"]
     },
     "include": ["src/**/*.ts"],
