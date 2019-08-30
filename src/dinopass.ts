@@ -88,7 +88,7 @@ const getOraclifiedPassword = async (n?: number): Promise<any> => {
  * @description Capitalize the first letter and amend a hash on the end.
  * The oraclefied password for Craig T.
  * @param p The password to Oracleify
- * @returns string The transformed password
+ * @returns string The transformed password&
  */
 const _oracleify = (p: string): string => {
     return p.charAt(0).toUpperCase() + p.slice(1) + '#'
