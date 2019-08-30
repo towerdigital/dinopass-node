@@ -48,7 +48,7 @@ const _requestPasswords = async (
 /**
  * @description Returns one or more simple passwords
  * @param n Number of passwords.
- * @returns Array
+ * @returns Promise<any>
  */
 const getSimplePassword = async (n?: number): Promise<any> => {
     try {
@@ -61,7 +61,7 @@ const getSimplePassword = async (n?: number): Promise<any> => {
 /**
  * @description Returns one or more strong passwords
  * @param n Number of passwords.
- * @returns Array
+ * @returns Promise<any>
  */
 const getStrongPassword = async (n?: number): Promise<any> => {
     try {
@@ -74,7 +74,7 @@ const getStrongPassword = async (n?: number): Promise<any> => {
 /**
  * @description Returns one or more oraclified passwords
  * @param n Number of passwords.
- * @returns Array
+ * @returns Promise<any>
  */
 const getOraclifiedPassword = async (n?: number): Promise<any> => {
     try {
@@ -88,6 +88,7 @@ const getOraclifiedPassword = async (n?: number): Promise<any> => {
  * @description Capitalize the first letter and amend a hash on the end.
  * The oraclefied password for Craig T.
  * @param p The password to Oracleify
+ * @returns string The transformed password
  */
 const _oracleify = (p: string): string => {
     return p.charAt(0).toUpperCase() + p.slice(1) + '#'
