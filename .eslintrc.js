@@ -1,21 +1,27 @@
 module.exports = {
   env: {
+    browser: true,
     es6: true,
     node: true,
     jest: true
   },
-  extends: 'standard',
-  plugins: ['standard', 'prettier'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module'
-  },
+  extends: ['standard', 'prettier/@typescript-eslint', 'prettier'],
+  plugins: ['prettier'],
+  overrides: [
+    {
+      files: ['src/*.ts'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 2015,
+        sourceType: 'module'
+      },
+      plugins: ['@typescript-eslint']
+    },
+    {
+      files: ['*.js', '*.jsx']
+    }
+  ],
   rules: {
-    'prettier/prettier': 2,
     'space-before-function-paren': [
       'error',
       {
@@ -23,6 +29,7 @@ module.exports = {
         named: 'never',
         asyncArrow: 'always'
       }
-    ]
+    ],
+    'prettier/prettier': 2
   }
 }
