@@ -5,7 +5,7 @@
 [![npm version](https://badge.fury.io/js/dinopass-node.svg)](https://badge.fury.io/js/dinopass-node)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/towerdigital/dinopass-node/blob/master/LICENSE)
 
-A very simple promise based node.JS api client for [dinopass.com](https://dinopass.com).
+A very simple promise based node.JS api client written in TypeScript for [dinopass.com](https://dinopass.com).
 Awesome password generator for kids, and apparently middle aged IT guys.
 
 About Dino's Passwords
