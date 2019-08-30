@@ -9,11 +9,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
   roots: ['<rootDir>'],
   testEnvironment: 'node',
-  testMatch: [
-    'src/**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[tj]s?(x)'
-  ],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)'],
   testPathIgnorePatterns: ['/node_modules/'],
-  verbose: true,
-  setupFilesAfterEnv: ['jest-extended', 'jest-chain']
+  verbose: true
 }
