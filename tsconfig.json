@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "es2015",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "./lib",
+        "sourceMap": true,
+        "lib": ["es5", "es2015", "es2016.array.include", "esnext.asynciterable"]
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "__test__"]
+}
