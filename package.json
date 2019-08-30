@@ -1,6 +1,6 @@
 {
     "name": "dinopass-node",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "description": "Simple DinoPass API client. Awesome password generator for kids, and apparently middle aged IT guys.",
     "main": "lib/index.js",
     "scripts": {

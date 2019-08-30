@@ -1,2 +1,2 @@
-export * from './dinopass';
-export * from './api';
+export * from './dinopass'
+export * from './api'
