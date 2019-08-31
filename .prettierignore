@@ -2,3 +2,9 @@
 .prettierignore
 .editorconfig
 coverage
+dist
+yarn.lock:
+*.d.ts
+*.map
+
+
