@@ -1,4 +1,2 @@
-declare const fetchPassword: (
-    type: string
-) => Promise<import('axios').AxiosResponse<any>>
-export { fetchPassword }
+declare const fetchPassword: (type: string) => Promise<import("axios").AxiosResponse<any>>;
+export { fetchPassword };
