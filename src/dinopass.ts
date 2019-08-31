@@ -9,15 +9,64 @@
 import { fetchPassword } from './api'
 
 /**
- * @description
- * @param num The number of passwords
- * @param type  simple or strong
- * @param isOraclify Transform a simple password
- * @returns {Promise[]}
+ * Returns one or more simple passwords
+ *  Simple passwords only have lower case letters and numbers.
+ *
+ * @param {number} n Number of passwords.
+ * @returns Promise<any>
+ */
+const getSimplePassword = async (n?: number): Promise<any> => {
+    try {
+        return await _requestPasswords(n, 'simple')
+    } catch (err) {
+        return err
+    }
+}
+
+/**
+ * Returns one or more strong passwords
+ * Strong passwords have mixed upper and lower case letters,
+ * special character (like @, $, ! and so on) plus some numbers.
+ *
+ * @param {number} n Number of passwords.
+ * @returns Promise<any>
+ */
+const getStrongPassword = async (n?: number): Promise<any> => {
+    try {
+        return await _requestPasswords(n, 'strong')
+    } catch (err) {
+        return err
+    }
+}
+
+/**
+ * The Oraclefied password for Craig T.
+ * Capitalize the first letter and amend a hash on the end.
+ * i.e. tinygrape76 => Tinygrape76#
+ * Returns one or more oraclified passwords
+ *
+ * @param {number} n The number of passwords.
+ * @returns Promise<any>
+ */
+const getOraclifiedPassword = async (n?: number): Promise<any> => {
+    try {
+        return await _requestPasswords(n, 'simple', true)
+    } catch (err) {
+        return err
+    }
+}
+
+/**
+ * Request the password(s) from the api
+ *
+ * @param {number} num  number of passwords
+ * @param {string} type  simple or strong
+ * @param {boolean} isOraclify Transform a simple password
+ * @returns Promise[]
  */
 const _requestPasswords = async (
     num?: number,
-    type?: string,
+    type: string = 'simple',
     isOraclify?: boolean
 ) => {
     const requests: Promise<any>[] = []
@@ -46,52 +95,12 @@ const _requestPasswords = async (
 }
 
 /**
- * @description Returns one or more simple passwords
- * @param n Number of passwords.
- * @returns Promise<any>
+ * Capitalize the first letter and amend a hash on the end.
+ *
+ * @param {string} p The password to Oracleify
+ * @returns string
  */
-const getSimplePassword = async (n?: number): Promise<any> => {
-    try {
-        return await _requestPasswords(n, 'simple')
-    } catch (err) {
-        return err
-    }
-}
-
-/**
- * @description Returns one or more strong passwords
- * @param n Number of passwords.
- * @returns Promise<any>
- */
-const getStrongPassword = async (n?: number): Promise<any> => {
-    try {
-        return await _requestPasswords(n, 'strong')
-    } catch (err) {
-        return err
-    }
-}
-
-/**
- * @description Returns one or more oraclified passwords
- * @param n Number of passwords.
- * @returns Promise<any>
- */
-const getOraclifiedPassword = async (n?: number): Promise<any> => {
-    try {
-        return await _requestPasswords(n, 'simple', true)
-    } catch (err) {
-        return err
-    }
-}
-
-/**
- * @description Capitalize the first letter and amend a hash on the end.
- * The oraclefied password for Craig T.
- * @param p The password to Oracleify
- * @returns string The transformed password&
- */
-const _oracleify = (p: string): string => {
-    return p.charAt(0).toUpperCase() + p.slice(1) + '#'
-}
+const _oracleify = (p: string): string =>
+    p.charAt(0).toUpperCase() + p.slice(1) + '#'
 
 export { getSimplePassword, getStrongPassword, getOraclifiedPassword }
