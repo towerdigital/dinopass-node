@@ -1,16 +1,19 @@
 {
     "compilerOptions": {
-        "esModuleInterop": true,
-        "moduleResolution": "node",
-        "declaration": false,
-        "module": "commonjs",
         "target": "es2015",
-        "noImplicitAny": true,
-        "removeComments": false,
-        "preserveConstEnums": true,
-        "outDir": "./lib",
-        "inlineSourceMap": true,
-        "lib": ["es5", "es2015", "es2016.array.include", "esnext.asynciterable"]
+        "declaration": true,
+        "stripInternal": true,
+
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+
+        "moduleResolution": "node",
+        "baseUrl": ".",
+
+        "sourceRoot": ".",
+        "sourceMap": true
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules", "__test__"]
