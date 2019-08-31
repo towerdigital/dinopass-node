@@ -2,22 +2,29 @@
     "name": "dinopass-node",
     "version": "0.0.13",
     "description": "Simple DinoPass API client. Awesome password generator for kids, and apparently middle aged IT guys.",
-    "main": "lib/index.js",
+    "main": "dist/cjs/index.js",
+    "module": "dist/es/index.js",
     "scripts": {
-        "lint": "eslint 'src/**/*.js' --color",
-        "lint:fix": "prettier-eslint 'src/**/*.js' --write",
-        "test": "jest --coverage",
-        "ts:def": "tsc --declaration --outDir . --emitDeclarationOnly",
-        "build": "tsc"
+        "lint": "eslint 'src/**/*.ts' --color",
+        "lint:fix": "prettier-eslint 'src/**/*.ts' --write",
+        "test": "jest --coverage && yarn lint:fix",
+        "ts:cjs": "yarn tsc -p ts/cjs.tsconfig.json",
+        "ts:es": "yarn tsc -p ts/es.tsconfig.json",
+        "ts:typedefs": "yarn tsc -p ts/types.tsconfig.json && mv defs/* . && rmdir defs",
+        "ts:all": "yarn ts:cjs && yarn ts:es && yarn ts:typedefs",
+        "build": "yarn clean && yarn ts:all",
+        "clean": "rimraf ./*.d.ts ./*.d.ts.map dist",
+        "prepublishOnly": "yarn test && yarn build",
+        "postpublish": "yarn clean"
     },
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged",
-            "pre-push": "npm test"
+            "pre-push": "yarn test"
         }
     },
     "lint-staged": {
-        "*.js": ["npm run lint:fix", "git add"]
+        "src/*.ts": ["yarn lint:fix", "git add"]
     },
     "repository": {
         "type": "git",
@@ -53,8 +60,7 @@
         "prettier": "^1.18.2",
         "prettier-eslint": "^9.0.0",
         "prettier-eslint-cli": "^5.0.0",
-        "rollup-plugin-babel": "^4.3.3",
-        "rollup-plugin-cleanup": "^3.1.1",
+        "rimraf": "^3.0.0",
         "standard": "^13.1.0",
         "typescript": "^3.6.2"
     },
