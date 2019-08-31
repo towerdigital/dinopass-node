@@ -8,7 +8,15 @@
 
 import axios from 'axios'
 
+/**
+ *  Fetch a password(s) from the dinopass.com API.
+ *
+ *
+ * @param {string} type  Either simple or strong
+ * @returns Promise<any>
+ */
 const fetchPassword = (type: string) => {
     return axios.get('http://www.dinopass.com/password/' + type)
 }
+
 export { fetchPassword }
