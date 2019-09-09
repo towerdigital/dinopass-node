@@ -11,7 +11,6 @@ import axios from 'axios'
 /**
  *  Fetch a password(s) from the dinopass.com API.
  *
- *
  * @param {string} type  Either simple or strong
  * @returns Promise<any>
  */
