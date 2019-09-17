@@ -83,11 +83,7 @@ export default class DinoPass {
      * @param num {number}
      */
     static simple(num: number): Promise<any> {
-        try {
-            return DinoPass.request(num, 'simple')
-        } catch (err) {
-            return err
-        }
+        return DinoPass.request(num, 'simple')
     }
 
     /**
