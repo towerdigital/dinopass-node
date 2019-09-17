@@ -9,12 +9,8 @@
         "noUnusedParameters": true,
         "noImplicitReturns": true,
 
-        "moduleResolution": "node",
-        "baseUrl": ".",
-
-        "sourceRoot": ".",
-        "sourceMap": true
+        "moduleResolution": "node"
     },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules", "__test__"]
+    "include": ["src/index.ts"],
+    "exclude": ["node_modules", "__tests__"]
 }

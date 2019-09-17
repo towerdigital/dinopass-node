@@ -22,6 +22,7 @@
 
 /**
  * A very simple DinoPass API client
+ *
  * @author Phillip Henslee
  * @version 0.2.0
  */
@@ -34,6 +35,7 @@ import axios from 'axios'
 export default class DinoPass {
     /**
      * Private static method to call the API.
+     *
      * @param type {string}
      * @param isOracleify {boolean}
      */
@@ -51,6 +53,7 @@ export default class DinoPass {
 
     /**
      * Private static method to build the password request (promises).
+     *
      * @param num {number}
      * @param type {string}
      * @param oraclify {boolean}
@@ -76,14 +79,20 @@ export default class DinoPass {
 
     /**
      * Return one or more simple passwords
+     *
      * @param num {number}
      */
     static simple(num: number): Promise<any> {
-        return DinoPass.request(num, 'simple')
+        try {
+            return DinoPass.request(num, 'simple')
+        } catch (err) {
+            return err
+        }
     }
 
     /**
      * Returns one or more strong passwords
+     *
      * @param num {number}
      */
     static strong(num: number): Promise<any> {
@@ -104,6 +113,7 @@ export default class DinoPass {
 
     /**
      * Capitalize the first letter and amend a hash on the end.
+     *
      * @param p {string}
      */
     private static oracleify(p: string): string {
