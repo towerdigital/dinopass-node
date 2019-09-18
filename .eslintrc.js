@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: ['standard', 'prettier/@typescript-eslint', 'prettier'],
+  extends: ['airbnb', 'prettier/@typescript-eslint', 'prettier'],
   plugins: ['prettier'],
   overrides: [
     {

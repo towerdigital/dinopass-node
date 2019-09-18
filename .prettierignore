@@ -3,7 +3,7 @@
 .editorconfig
 coverage
 dist
-yarn.lock:
+yarn.lock
 *.d.ts
 *.map
 

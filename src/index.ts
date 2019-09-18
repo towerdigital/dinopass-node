@@ -27,7 +27,7 @@
  * @version 0.2.0
  */
 
-import axios from 'axios'
+import axios from 'axios';
 
 /**
  *  @class DinoPass
@@ -47,8 +47,8 @@ export default class DinoPass {
                     isOracleify ? DinoPass.oracleify(data) : data
             ],
             timeout: 1000
-        }
-        return axios(type, config)
+        };
+        return axios(type, config);
     }
 
     /**
@@ -64,17 +64,17 @@ export default class DinoPass {
         oraclify?: boolean
     ): Promise<any> {
         // Num should at the least be 1
-        num = num === undefined ? 1 : num
+        num = num === undefined ? 1 : num;
 
         // Limit the request to 10
-        num = num > 10 ? 10 : num
+        num = num > 10 ? 10 : num;
 
-        const requests: Promise<any>[] = []
+        const requests: Promise<any>[] = [];
 
         while (num--) {
-            requests.push(DinoPass.api(type, oraclify))
+            requests.push(DinoPass.api(type, oraclify));
         }
-        return Promise.all(requests).then(p => p.map(r => r.data))
+        return Promise.all(requests).then(p => p.map(r => r.data));
     }
 
     /**
@@ -83,7 +83,7 @@ export default class DinoPass {
      * @param num {number}
      */
     static simple(num: number): Promise<any> {
-        return DinoPass.request(num, 'simple')
+        return DinoPass.request(num, 'simple');
     }
 
     /**
@@ -92,7 +92,7 @@ export default class DinoPass {
      * @param num {number}
      */
     static strong(num: number): Promise<any> {
-        return DinoPass.request(num, 'strong')
+        return DinoPass.request(num, 'strong');
     }
 
     /**
@@ -104,7 +104,7 @@ export default class DinoPass {
      * @param num {number}
      */
     static oracleified(num: number): Promise<any> {
-        return DinoPass.request(num, 'simple', true)
+        return DinoPass.request(num, 'simple', true);
     }
 
     /**
@@ -113,6 +113,6 @@ export default class DinoPass {
      * @param p {string}
      */
     private static oracleify(p: string): string {
-        return p.charAt(0).toUpperCase() + p.slice(1) + '#'
+        return `${p.charAt(0).toUpperCase() + p.slice(1)}#`;
     }
 }

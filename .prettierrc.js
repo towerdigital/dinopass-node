@@ -1,7 +1,6 @@
 // Prettier config
 module.exports = {
   endOfLine: 'lf',
-  semi: false,
   singleQuote: true,
   overrides: [
     {
@@ -9,4 +8,4 @@ module.exports = {
       options: { parser: 'json' }
     }
   ]
-}
+};
