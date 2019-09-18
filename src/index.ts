@@ -23,7 +23,7 @@
 /**
  * A very simple DinoPass API client
  *
- * @author Phillip Henslee
+ * @author Phillip Henslee <ph2@ph2.us>
  * @version 0.2.0
  */
 
