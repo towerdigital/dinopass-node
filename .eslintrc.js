@@ -22,14 +22,7 @@ module.exports = {
     }
   ],
   rules: {
-    'space-before-function-paren': [
-      'error',
-      {
-        anonymous: 'always',
-        named: 'never',
-        asyncArrow: 'always'
-      }
-    ],
+    'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
     'prettier/prettier': 2
   }
-}
+};

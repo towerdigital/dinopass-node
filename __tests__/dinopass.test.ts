@@ -6,65 +6,73 @@
  *
  */
 
-import DinoPass from '../src'
-// @ts-ignore
-import axios, { AxiosStatic } from 'axios'
+import DinoPass from '../src/index';
+import MockAdapter from 'axios-mock-adapter';
+import axios from 'axios';
 
-jest.mock('axios')
-// @ts-ignore
-const mockedAxios = axios as jest.Mocked<typeof AxiosStatic>
+let mockedAxios = new MockAdapter(axios);
 
-describe('DinoPass Client Test Suite', () => {
+beforeEach(() => {
+    mockedAxios = new MockAdapter(axios, { delayResponse: 100 });
+});
+
+describe('DinoPass', () => {
     it('Should fetch one simple password(s) from api.', async () => {
-        const resp = { data: 'crazypromise32' }
-        mockedAxios.mockResolvedValue(resp)
+        mockedAxios.onGet('/simple').reply(200, 'crazypromise32');
 
-        const pwd = await DinoPass.simple(1)
+        const pwd = await DinoPass.simple(1);
 
-        expect(pwd).toEqual(['crazypromise32'])
-        expect(pwd.length).toEqual(1)
-    })
+        expect(pwd).toEqual(['crazypromise32']);
+        expect(mockedAxios.history.get.length).toBe(1);
+        expect(pwd.length).toEqual(1);
+    });
 
     it('Should return one password if no number is specified.', async () => {
-        const resp = { data: 'bigalert23' }
-        mockedAxios.mockResolvedValue(resp)
+        mockedAxios.onGet('/simple').reply(200, 'bigalert23');
 
         // @ts-ignore
-        const pwd = await DinoPass.simple()
-        expect(pwd).toEqual(['bigalert23'])
-        expect(pwd.length).toEqual(1)
-    })
+        const pwd = await DinoPass.simple();
 
-    /*it('Should handle an error', async () => {
-        const resp = 'error'
-        mockedAxios.mockRejectedValue(resp)
+        expect(mockedAxios.history.get.length).toBe(1);
+        expect(pwd).toEqual(['bigalert23']);
+        expect(pwd.length).toEqual(1);
+    });
 
-        const pwd = await DinoPass.simple(1)
-        expect(pwd).toEqual('error')
-    })*/
+    it('Should handle an error', async () => {
+        mockedAxios.onGet('/simple').networkError();
+
+        const pwd = await DinoPass.simple(1);
+        expect(mockedAxios.history.get.length).toBe(1);
+        expect(pwd).toEqual(Error('Network Error'));
+    });
 
     it('Should fetch two strong password(s) from api.', async () => {
-        const resp = { data: 'f@stHeat78' }
-        mockedAxios.mockResolvedValue(resp)
+        mockedAxios.onGet('/strong').reply(200, 'f@stHeat78');
 
-        const pwd = await DinoPass.strong(2)
-        expect(pwd).toEqual(['f@stHeat78', 'f@stHeat78'])
-        expect(pwd.length).toEqual(2)
-    })
+        const pwd = await DinoPass.strong(2);
+
+        expect(mockedAxios.history.get.length).toBe(2);
+        expect(pwd).toEqual(['f@stHeat78', 'f@stHeat78']);
+        expect(pwd.length).toEqual(2);
+    });
 
     it('Should fetch three simple passwords and Oraclify them.', async () => {
-        const resp = { data: 'Greenkey44#' }
-        mockedAxios.mockResolvedValue(resp)
+        mockedAxios.onGet('/simple').reply(200, 'greenmonkey44');
 
-        const pwd = await DinoPass.oracleified(3)
-        expect(pwd).toEqual(['Greenkey44#', 'Greenkey44#', 'Greenkey44#'])
-    })
+        const pwd = await DinoPass.oracleified(3);
+        expect(mockedAxios.history.get.length).toBe(3);
+        expect(pwd).toEqual([
+            'Greenmonkey44#',
+            'Greenmonkey44#',
+            'Greenmonkey44#'
+        ]);
+    });
 
     it('Limits the number of passwords to 10.', async () => {
-        const resp = { data: 'blueshark67' }
-        mockedAxios.mockResolvedValue(resp)
+        mockedAxios.onGet('/simple').reply(200, 'blueocean34');
 
-        const thePasswords = await DinoPass.simple(100)
-        expect(thePasswords.length).toEqual(10)
-    })
-})
+        const thePasswords = await DinoPass.simple(100);
+        expect(mockedAxios.history.get.length).toBe(10);
+        expect(thePasswords.length).toEqual(10);
+    });
+});

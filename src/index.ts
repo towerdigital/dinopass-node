@@ -48,7 +48,7 @@ export default class DinoPass {
             ],
             timeout: 1000
         };
-        return axios(type, config);
+        return axios.get(type, config);
     }
 
     /**
@@ -59,22 +59,21 @@ export default class DinoPass {
      * @param oraclify {boolean}
      */
     private static async request(
-        num: number,
+        num: number = 1,
         type: string,
         oraclify?: boolean
     ): Promise<any> {
-        // Num should at the least be 1
-        num = num === undefined ? 1 : num;
-
-        // Limit the request to 10
-        num = num > 10 ? 10 : num;
-
         const requests: Promise<any>[] = [];
 
-        while (num--) {
+        let n = num > 10 ? 10 : num;
+
+        while (n > 0) {
             requests.push(DinoPass.api(type, oraclify));
+            n -= 1;
         }
-        return Promise.all(requests).then(p => p.map(r => r.data));
+        return Promise.all(requests)
+            .then(p => p.map(r => r.data))
+            .catch(err => err);
     }
 
     /**
