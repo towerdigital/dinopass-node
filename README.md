@@ -37,6 +37,6 @@ console.log(passwords)  // ['paleOl!ve66']
 // Promise
 
 DinoPass.simple(1)
-.then(p => console.log(p)) // ['crazypromise32']
+.then(p => console.log(p)); // ['crazypromise32']
 
 ```
