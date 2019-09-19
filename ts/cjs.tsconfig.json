@@ -2,8 +2,14 @@
     "extends": "../tsconfig.json",
     "include": ["../src"],
     "compilerOptions": {
-        "module": "CommonJS",
-        "declaration": false,
-        "outDir": "../dist/cjs"
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es2017",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "../dist/cjs",
+        "removeComments": true
     }
 }

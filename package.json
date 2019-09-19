@@ -15,7 +15,7 @@
         "ts:all": "yarn ts:cjs && yarn ts:es && yarn ts:typedefs",
         "build": "yarn clean && yarn ts:all",
         "clean": "rimraf ./*.d.ts ./*.d.ts.map dist",
-        "prepublishOnly": "yarn test && yarn build",
+        "prepublishOnly": "yarn test",
         "postpublish": "yarn clean"
     },
     "husky": {
@@ -69,5 +69,8 @@
     },
     "dependencies": {
         "axios": "^0.19.0"
+    },
+    "engines": {
+        "node": ">=v10.16.2"
     }
 }
