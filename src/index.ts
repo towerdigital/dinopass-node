@@ -24,7 +24,7 @@
  * A very simple DinoPass API client
  *
  * @author Phillip Henslee <ph2@ph2.us>
- * @version 0.2.0
+ * @version 0.3.0
  */
 
 import axios from 'axios';
