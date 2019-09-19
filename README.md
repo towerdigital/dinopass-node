@@ -25,29 +25,18 @@ npm install dinopass-node
 ### Example usage
 
 ```
-dinopass = require('dinopass-node')
+const DinoPass = require('dinopass-node')
 
 // Using async/await
 
-const asyncFunction = async () => {
-  simplePassword = await dinopass.getSimplePassword(1)
-  console.log(simplePassword)
-}
-
-asyncFunction()  output> [ 'newiron29' ]
+;(async () => {
+const passwords = await DinoPass.strong(1)
+console.log(passwords)  // ['paleOl!ve66']
+})();
 
 // Promise
 
-dinopass.getStrongPassword(5)
-.then(pwds => console.log(pwds))
+DinoPass.simple(1)
+.then(p => console.log(p)) // ['crazypromise32']
 
-output>
-
-[
-  'poorB@ll45',
-  'richNew+10',
-  'paleOl!ve66',
-  'hug3Curve94',
-  'lu$hSun14'
-]
 ```
