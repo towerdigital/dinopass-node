@@ -10,7 +10,7 @@
         "forceConsistentCasingInFileNames": true,
         "sourceMap": true,
         "declaration": true,
-        "removeComments": true
+        "removeComments": false
     },
     "files": ["./src/index.ts"],
     "compileOnSave": false,

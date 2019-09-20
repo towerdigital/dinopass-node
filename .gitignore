@@ -12,6 +12,7 @@ node_modules/
 
 # build output
 coverage
+_bundles
 dist
 lib
 lib-esm

@@ -25,6 +25,7 @@
  *
  * @author Phillip Henslee <phil@towerdigital.us>
  * @version 0.4.0
+ * @licence MIT
  */
 
 import axios from 'axios';
