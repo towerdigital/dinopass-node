@@ -13,6 +13,8 @@ node_modules/
 # build output
 coverage
 dist
+lib
+lib-esm
 *.d.ts
 *.map
 src/*.js
