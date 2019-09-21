@@ -32,7 +32,7 @@ npm install dinopass-node
 ### Example node.js usage
 
 ```
-const DinoPass = require('dinopass-node')
+const DinoPass = require('dinopass-node');
 
 // Using async/await
 
@@ -48,4 +48,28 @@ DinoPass.simple(1)
 
 ```
 
-###
+### ES6
+
+```
+import * as DinoPass from 'dinopass-node';
+
+DinoPass.simple(1)
+.then(p => console.log(p)); // ['crazypromise32']
+
+```
+
+### CDN
+
+For CDN, you can use unpkg:
+
+[https://unpkg.com/dinopass-node/dist/dinopass.min.js](https://unpkg.com/dinopass-node/dist/dinopass.min.js)
+
+```
+<body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/dinopass-node/dist/dinopass.min.js"></script>
+  <script>
+    DinoPass.simple().then(p => console.log(p));  //["ultralizard52"]
+  </script>
+</body>
+```
