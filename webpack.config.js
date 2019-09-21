@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const PATHS = {
   entryPoint: path.resolve(__dirname, 'src/index.ts'),
-  bundles: path.resolve(__dirname, 'dist/umd')
+  bundles: path.resolve(__dirname, 'dist')
 };
 
 const config = {
@@ -12,7 +12,7 @@ const config = {
   // the name to filter the second entry point for applying code
   // minification via UglifyJS
   entry: {
-    'dinopass.umd.min': [PATHS.entryPoint]
+    'dinopass.min': [PATHS.entryPoint]
   },
   mode: 'production',
   // The output defines how and where we want the bundles. The special
