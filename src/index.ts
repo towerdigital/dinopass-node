@@ -31,88 +31,76 @@
 import axios from 'axios';
 
 /**
- *  @class DinoPass
+ * Capitalize the first letter and amend a hash on the end.
+ *
+ * @param p {string}
  */
-export default class DinoPass {
-    /**
-     * Private static method to call the API.
-     *
-     * @param type {string}
-     * @param isOracleify {boolean}
-     */
-    private static async api(type: string, isOracleify?: boolean) {
-        const config = {
-            baseURL: 'https://www.dinopass.com/password/',
-            transformResponse: [
-                (data: string) =>
-                    isOracleify ? DinoPass.oracleify(data) : data
-            ],
-            timeout: 1000
-        };
-        return axios.get(type, config);
+function oracleify(p: string): string {
+    return `${p.charAt(0).toUpperCase() + p.slice(1)}#`;
+}
+
+/**
+ * Call the DinoPass API
+ *
+ * @param type {string}
+ * @param isOracleify {boolean}
+ */
+async function api(type: string, isOracleify?: boolean) {
+    const config = {
+        baseURL: 'https://www.dinopass.com/password/',
+        transformResponse: [(data: string) => (isOracleify ? oracleify(data) : data)],
+        timeout: 1000
+    };
+    return axios.get(type, config);
+}
+
+/**
+ * Build the password request (promises).
+ *
+ * @param num {number}
+ * @param type {string}
+ * @param oraclify {boolean}
+ */
+async function request(num: number = 1, type: string, oraclify?: boolean): Promise<any> {
+    const requests: Promise<any>[] = [];
+
+    let n = num > 10 ? 10 : num;
+
+    while (n > 0) {
+        requests.push(api(type, oraclify));
+        n -= 1;
     }
+    return Promise.all(requests)
+        .then(p => p.map(r => r.data))
+        .catch(err => err);
+}
 
-    /**
-     * Private static method to build the password request (promises).
-     *
-     * @param num {number}
-     * @param type {string}
-     * @param oraclify {boolean}
-     */
-    private static async request(
-        num: number = 1,
-        type: string,
-        oraclify?: boolean
-    ): Promise<any> {
-        const requests: Promise<any>[] = [];
+/**
+ * Return one or more simple passwords
+ *
+ * @param num {number}
+ */
+export function simple(num: number): Promise<any> {
+    return request(num, 'simple');
+}
 
-        let n = num > 10 ? 10 : num;
+/**
+ * Returns one or more strong passwords
+ *
+ * @param num {number}
+ */
+export function strong(num: number): Promise<any> {
+    return request(num, 'strong');
+}
 
-        while (n > 0) {
-            requests.push(DinoPass.api(type, oraclify));
-            n -= 1;
-        }
-        return Promise.all(requests)
-            .then(p => p.map(r => r.data))
-            .catch(err => err);
-    }
-
-    /**
-     * Return one or more simple passwords
-     *
-     * @param num {number}
-     */
-    static simple(num: number): Promise<any> {
-        return DinoPass.request(num, 'simple');
-    }
-
-    /**
-     * Returns one or more strong passwords
-     *
-     * @param num {number}
-     */
-    static strong(num: number): Promise<any> {
-        return DinoPass.request(num, 'strong');
-    }
-
-    /**
-     * The Oraclefied password for Craig T.
-     * Capitalize the first letter and amend a hash on the end.
-     * i.e. tinygrape76 => Tinygrape76#
-     * Returns one or more oraclified passwords
-     *
-     * @param num {number}
-     */
-    static oracleified(num: number): Promise<any> {
-        return DinoPass.request(num, 'simple', true);
-    }
-
-    /**
-     * Capitalize the first letter and amend a hash on the end.
-     *
-     * @param p {string}
-     */
-    private static oracleify(p: string): string {
-        return `${p.charAt(0).toUpperCase() + p.slice(1)}#`;
-    }
+/**
+ * The Oraclefied password for Craig T.
+ * Capitalize the first letter and amend a hash on the end.
+ * i.e. tinygrape76 => Tinygrape76#
+ * Returns one or more oraclified passwords
+ *
+ * @param num {number}
+ */
+export function oracleified(num: number): Promise<any> {
+    return request(num, 'simple', true);
 }

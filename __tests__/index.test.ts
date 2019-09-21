@@ -6,14 +6,14 @@
  *
  */
 
-import DinoPass from '../src/index';
+import * as DinoPass from '../src';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 
 let mockedAxios = new MockAdapter(axios);
 
 beforeEach(() => {
-    mockedAxios = new MockAdapter(axios, { delayResponse: 100 });
+    mockedAxios = new MockAdapter(axios);
 });
 
 describe('DinoPass', () => {
@@ -61,11 +61,7 @@ describe('DinoPass', () => {
 
         const pwd = await DinoPass.oracleified(3);
         expect(mockedAxios.history.get.length).toBe(3);
-        expect(pwd).toEqual([
-            'Greenmonkey44#',
-            'Greenmonkey44#',
-            'Greenmonkey44#'
-        ]);
+        expect(pwd).toEqual(['Greenmonkey44#', 'Greenmonkey44#', 'Greenmonkey44#']);
     });
 
     it('Limits the number of passwords to 10.', async () => {

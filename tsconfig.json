@@ -10,9 +10,13 @@
         "forceConsistentCasingInFileNames": true,
         "sourceMap": true,
         "declaration": true,
-        "removeComments": false
+        "removeComments": true
     },
     "files": ["./src/index.ts"],
     "compileOnSave": false,
-    "buildOnSave": false
+    "buildOnSave": false,
+    "formatCodeOptions": {
+        "indentSize": 2,
+        "tabSize": 2
+    }
 }
