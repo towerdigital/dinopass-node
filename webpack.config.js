@@ -1,10 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const TerserPlugin = require('terser-webpack-plugin');
 
 const PATHS = {
   entryPoint: path.resolve(__dirname, 'src/index.ts'),
-  bundles: path.resolve(__dirname, '_bundles')
+  bundles: path.resolve(__dirname, 'dist/umd')
 };
 
 const config = {
@@ -13,8 +12,7 @@ const config = {
   // the name to filter the second entry point for applying code
   // minification via UglifyJS
   entry: {
-    dinopass: [PATHS.entryPoint],
-    'dinopass.min': [PATHS.entryPoint]
+    'dinopass.umd.min': [PATHS.entryPoint]
   },
   mode: 'production',
   // The output defines how and where we want the bundles. The special
@@ -36,21 +34,8 @@ const config = {
   // Activate source maps for the bundles in order to preserve the original
   // source when the user debugs the application
   devtool: 'source-map',
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-        terserOptions: {
-          include: '[name].min.js',
-          extractComments: false,
-          output: {
-            comments: false
-          }
-        }
-      })
-    ]
+  externals: {
+    axios: 'axios'
   },
   // Add the loader for .ts files.
   module: {
