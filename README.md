@@ -3,7 +3,7 @@
 [![dinopass-node](https://img.shields.io/badge/dinopass-node-ed761b)](https://github.com/towerdigital/dinopass-node)
 [![typescript](https://img.shields.io/badge/typescript-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Node Module](https://img.shields.io/badge/node.js-module-3C873A?logo=node.js)](https://nodejs.org/en/)
-![npm](https://img.shields.io/npm/v/dinopass-node?color=CC3534&label=dinopass-node&logo=NPM)<br>
+[![npm](https://img.shields.io/npm/v/dinopass-node?color=CC3534&label=dinopass-node&logo=NPM)](https://www.npmjs.com/package/dinopass-node)<br>
 [![jest](https://img.shields.io/badge/jest-CC3534?logo=jest)](https://github.com/facebook/jest)
 [![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green)](https://wallabyjs.com)
 [![Build Status](https://travis-ci.org/towerdigital/dinopass-node.svg?branch=master)](https://travis-ci.org/towerdigital/dinopass-node)
