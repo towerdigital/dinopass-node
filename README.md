@@ -1,6 +1,6 @@
 # dinopass-node
 
-[![typescript](https://img.shields.io/badge/dinopass-node-orange?logo=&style=for-the-badge)](https://github.com/towerdigital/dinopass-node)
+[![dinopass-node](https://img.shields.io/badge/dinopass-node-orange?logo=&style=for-the-badge)](https://github.com/towerdigital/dinopass-node)
 ![typescript](https://img.shields.io/badge/typescript-blue?logo=typescript&style=for-the-badge)
 [![Node Module](https://img.shields.io/badge/node-module-green?logo=node.js&style=for-the-badge)](https://github.com/towerdigital/dinopass-node)
 ![npm](https://img.shields.io/npm/v/dinopass-node?color=green&label=dinopass-node&logo=npm&logoColor=white&style=for-the-badge)
