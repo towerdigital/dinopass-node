@@ -1,12 +1,12 @@
 # dinopass-node
 
-[![dinopass](https://img.shields.io/badge/dino-pass-blue.svg)](https://github.com/towerdigital/dinopass-node)
-[![Node Module](https://img.shields.io/badge/node.js-module-82bb22.svg)](https://github.com/towerdigital/dinopass-node)
-[![npm version](https://badge.fury.io/js/dinopass-node.svg)](https://badge.fury.io/js/dinopass-node)
-[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/towerdigital/dinopass-node/blob/master/LICENSE)
-<br>
+[![typescript](https://img.shields.io/badge/dinopass-node-orange?logo=&style=for-the-badge)](https://github.com/towerdigital/dinopass-node)
+![typescript](https://img.shields.io/badge/typescript-blue?logo=typescript&style=for-the-badge)
+[![Node Module](https://img.shields.io/badge/node-module-green?logo=node.js&style=for-the-badge)](https://github.com/towerdigital/dinopass-node)
+![npm](https://img.shields.io/npm/v/dinopass-node?color=green&label=dinopass-node&logo=npm&logoColor=white&style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/towerdigital/dinopass-node?color=lightgray&style=for-the-badge)<br><br>
 [![NPM](https://nodei.co/npm/dinopass-node.png?compact=true)](https://nodei.co/npm/dinopass-node/)
-
+<br><br>
 A very simple promise based node.JS api client written in TypeScript for [dinopass.com](https://dinopass.com).
 Awesome password generator for kids, and apparently middle aged IT guys.
 
