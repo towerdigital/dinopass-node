@@ -1,11 +1,14 @@
 {
     "name": "dinopass-node",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "description": "Simple DinoPass API client. Awesome password generator for kids, and apparently middle aged IT guys.",
     "main": "dist/cjs/index.js",
     "module": "dist/esm2015/index.js",
     "types": "index.d.ts",
-    "files": ["dist", "index.d.*"],
+    "files": [
+        "dist",
+        "index.d.*"
+    ],
     "scripts": {
         "lint": "eslint 'src/**/*.ts' --color",
         "lint:fix": "prettier-eslint 'src/**/*.ts' --write",
@@ -26,13 +29,19 @@
         }
     },
     "lint-staged": {
-        "src/*.ts": ["yarn lint:fix", "git add"]
+        "src/*.ts": [
+            "yarn lint:fix",
+            "git add"
+        ]
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/towerdigital/dinopass-node.git"
     },
-    "keywords": ["dinopass", "passwords"],
+    "keywords": [
+        "dinopass",
+        "passwords"
+    ],
     "author": "Phillip Henslee <ph2@ph2.us> (https://github.com/philliphenslee)",
     "license": "MIT",
     "bugs": {
