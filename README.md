@@ -6,7 +6,7 @@
 ![npm](https://img.shields.io/npm/v/dinopass-node?color=CC3534&label=dinopass-node&logo=NPM)<br>
 [![jest](https://img.shields.io/badge/jest-CC3534?logo=jest)](https://github.com/facebook/jest)
 [![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green)](https://wallabyjs.com)
-![Travis (.org)](https://img.shields.io/travis/towerdigital/dinopass-node?logo=travis-ci&logoColor=white)
+[![Build Status](https://travis-ci.org/towerdigital/dinopass-node.svg?branch=master)](https://travis-ci.org/towerdigital/dinopass-node)
 [![Coverage Status](https://coveralls.io/repos/github/towerdigital/dinopass-node/badge.svg?branch=master)](https://coveralls.io/github/towerdigital/dinopass-node?branch=master)
 ![GitHub](https://img.shields.io/github/license/towerdigital/dinopass-node?color=lightgray)
 <br><br>
