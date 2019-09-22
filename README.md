@@ -29,7 +29,7 @@ Strong passwords have mixed upper and lower case letters, a special character (l
 npm install dinopass-node
 ```
 
-### Example node.js usage
+### Node.js
 
 ```
 const DinoPass = require('dinopass-node');
