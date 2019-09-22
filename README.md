@@ -12,7 +12,7 @@
 <br><br>
 [![NPM](https://nodei.co/npm/dinopass-node.png?compact=true)](https://nodei.co/npm/dinopass-node/)
 <br><br>
-A very simple promise based node.JS api client written in TypeScript for [dinopass.com](https://dinopass.com).
+A very simple promise based API client written in TypeScript for [dinopass.com](https://dinopass.com).
 Awesome password generator for kids, and apparently middle aged IT guys.
 
 About Dino's Passwords
