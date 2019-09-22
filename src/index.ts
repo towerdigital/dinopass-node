@@ -24,7 +24,7 @@
  * A very simple DinoPass API client
  *
  * @author Phillip Henslee <phil@towerdigital.us>
- * @version 0.5.6
+ * @version 1.0.0
  * @licence MIT
  */
 
@@ -94,8 +94,9 @@ export function strong(num: number): Promise<any> {
 
 /**
  * The Oraclefied password for Craig T.
+ * A transformed simple password.
  * Capitalize the first letter and amend a hash on the end.
- * i.e. tinygrape76 => Tinygrape76#
+ * i.e. tinygrape76 = Tinygrape76#
  * Returns one or more oraclified passwords
  *
  * @param num {number}
