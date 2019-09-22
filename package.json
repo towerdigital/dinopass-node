@@ -5,7 +5,10 @@
     "main": "dist/cjs/index.js",
     "module": "dist/esm2015/index.js",
     "types": "index.d.ts",
-    "files": ["dist", "index.d.*"],
+    "files": [
+        "dist",
+        "index.d.*"
+    ],
     "scripts": {
         "lint": "eslint 'src/**/*.ts' --color",
         "lint:fix": "prettier-eslint 'src/**/*.ts' --write",
@@ -26,13 +29,19 @@
         }
     },
     "lint-staged": {
-        "src/*.ts": ["yarn lint:fix", "git add"]
+        "src/*.ts": [
+            "yarn lint:fix",
+            "git add"
+        ]
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/towerdigital/dinopass-node.git"
     },
-    "keywords": ["dinopass", "passwords"],
+    "keywords": [
+        "dinopass",
+        "passwords"
+    ],
     "author": "Phillip Henslee <ph2@ph2.us> (https://github.com/philliphenslee)",
     "license": "MIT",
     "bugs": {
@@ -68,7 +77,6 @@
         "prettier-eslint": "^9.0.0",
         "prettier-eslint-cli": "^5.0.0",
         "rimraf": "^3.0.0",
-        "terser-webpack-plugin": "^2.1.0",
         "typescript": "^3.6.2",
         "webpack": "^4.40.2",
         "webpack-cli": "^3.3.9"
