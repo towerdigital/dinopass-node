@@ -48,8 +48,7 @@ function oracleify(p: string): string {
 async function api(type: string, isOracleify?: boolean) {
     const config = {
         baseURL: 'https://www.dinopass.com/password/',
-        transformResponse: [(data: string) => (isOracleify ? oracleify(data) : data)],
-        timeout: 1000
+        transformResponse: [(data: string) => (isOracleify ? oracleify(data) : data)]
     };
     return axios.get(type, config);
 }
