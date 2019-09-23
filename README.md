@@ -60,7 +60,7 @@ DinoPass.simple(1)
 
 ### CDN
 
-For CDN, you can use unpkg:
+For CDN, you can use unpkg, requires dependency axios
 
 [https://unpkg.com/dinopass-node/dist/dinopass.min.js](https://unpkg.com/dinopass-node/dist/dinopass.min.js)
 
@@ -69,7 +69,7 @@ For CDN, you can use unpkg:
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/dinopass-node/dist/dinopass.min.js"></script>
   <script>
-    DinoPass.simple().then(p => console.log(p));  //["ultralizard52"]
+    DinoPass.simple().then(p => console.log(p));  //["ultrabrowser52"]
   </script>
 </body>
 ```

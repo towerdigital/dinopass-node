@@ -19,7 +19,6 @@ beforeEach(() => {
 describe('DinoPass', () => {
     it('Should fetch one simple password(s) from api.', async () => {
         mockedAxios.onGet('/simple').reply(200, 'crazypromise32');
-
         const pwd = await DinoPass.simple(1);
 
         expect(pwd).toEqual(['crazypromise32']);
@@ -27,7 +26,7 @@ describe('DinoPass', () => {
         expect(pwd.length).toEqual(1);
     });
 
-    it('Should return one password if no number is specified.', async () => {
+    it('Should return one password if number arg is not specified.', async () => {
         mockedAxios.onGet('/simple').reply(200, 'bigalert23');
 
         // @ts-ignore
