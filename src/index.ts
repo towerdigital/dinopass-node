@@ -24,7 +24,7 @@
  * A very simple DinoPass API client
  *
  * @author Phillip Henslee <phil@towerdigital.us>
- * @version 1.0.0
+ * @version 1.0.1
  * @licence MIT
  */
 
