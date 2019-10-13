@@ -11,6 +11,7 @@ A very simple promise based API client written in TypeScript for [dinopass.com](
 an awesome password generator for kids and apparently middle aged IT guys.
 
 About Dino's Passwords
+
 What does 'Simple password' mean?
 
 Simple passwords only have lower case letters and numbers. They are easier to remember but might also be easier for someone else to guess.
